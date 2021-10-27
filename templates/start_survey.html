@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Survey</title>
+</head>
+<body>
+    <h1>Select a survey!</h1>
+    <form action="/survey" method="post">
+        <select name = "survey_id">
+            {% for survey in surveys %}
+                <option value={{ survey.title }}>
+                    {{ survey.title }}
+                </option>
+            {%  endfor %}
+        </select>
+        <!-- <input type="hidden" name="survey_id" value="{{ survey_id }}"> -->
+        <button>Submit</button>
+    </form>
+</body>
+</html>
